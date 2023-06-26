@@ -1,3 +1,3 @@
-module.exports = {publicPath: process.env.NODE_ENV === 'production'
+export default {publicPath: process.env.NODE_ENV === 'production'
     ? '/customChatGPTChat/'
     : '/'}
