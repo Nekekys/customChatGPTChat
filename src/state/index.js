@@ -2,7 +2,7 @@ import {createStore} from 'vuex'
 import axios from "axios";
 import {SaveOnLocalStorage} from "../utils";
 
-const APIKey = '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'
+const APIKey = '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'
 
 export default createStore({
     state: {

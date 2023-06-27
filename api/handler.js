@@ -1,5 +1,5 @@
 
-const APIKey = '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'
+const APIKey = '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'
 export default async function handler(request, response) {
     try{
         const data = await fetch('https://api.openai.com/v1/completions',{
