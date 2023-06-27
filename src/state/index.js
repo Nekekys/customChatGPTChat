@@ -16,8 +16,7 @@ export default createStore({
     },
     mutations: {
         setChats (state, data) {
-            console.log(data)
-           state.chats =  data
+           state.chats = data ? data : []
         },
         add (state, data) {
             state.chats.push({
