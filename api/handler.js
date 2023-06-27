@@ -8,10 +8,13 @@ export default async function handler(request, response) {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${APIKey}`
         }
-    }).then(res => response.status(200).json({
-       body: res,
-       query: res
-   }))
+    }).then(res => {
+        console.log(res)
+       response.status(200).json({
+           body: res,
+           query: res
+       })
+   })
 
 
 }
