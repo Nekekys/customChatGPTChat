@@ -11,8 +11,8 @@ export default async function handler(request, response) {
     }).then(res => {
         console.log(res)
        response.status(200).json({
-           body: res,
-           query: res
+           body: res.data,
+           query: res.data.choices[0].text
        })
    })
 
