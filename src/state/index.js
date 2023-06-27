@@ -59,6 +59,9 @@ export default createStore({
             }).then(res => {
                 context.commit('addMessage', {message: res.data.choices[0].text, id: data.id, user: false})
                 context.commit('endLoading')
+            }).catch(e => {
+                console.log(e)
+                context.commit('endLoading')
             })
         }
     }
