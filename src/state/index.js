@@ -53,24 +53,9 @@ export default createStore({
     actions: {
         SendMessage (context, data) {
             context.commit('startLoading')
-            const APIBody = {
-                "model": "text-davinci-003",
-                "prompt": data.message,
-                "temperature": 0.9,
-                "max_tokens": 600,
-                "top_p": 1,
-                "frequency_penalty": 0.0,
-                "presence_penalty": 0.6,
-                "stop": [" Human:", " AI:"]
-            }
             axios({
-                method: 'post',
-                url: 'https://api.openai.com/v1/completions',
-                data: JSON.stringify(APIBody),
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${APIKey}`
-                }
+                method: 'get',
+                url: `https://custom-chat-gpt-chat.vercel.app/api/handler?message=${data.message}`,
             }).then(res => {
                 context.commit('addMessage', {message: res.data.choices[0].text, id: data.id, user: false})
                 context.commit('endLoading')
