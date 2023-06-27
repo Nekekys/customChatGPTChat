@@ -10,18 +10,10 @@ export default async function handler(request, response) {
                 'Authorization': `Bearer ${APIKey}`
             }
         })
-
-        return {
-            statusCode: 200,
-            headers: {},
-            body: data,
-        }
+        const dataJSON = await data.json()
+        return response.send(dataJSON)
     }catch (e) {
-        return {
-            statusCode: 400,
-            headers: {},
-            body: 'Error',
-        }
+        return response.send("error")
     }
 
 
