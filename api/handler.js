@@ -1,5 +1,5 @@
 
-const APIKey = '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'
+const APIKey = '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'
 export default async function handler(request, response) {
     const APIBody = {
         "model": "text-davinci-003",
