@@ -1,5 +1,5 @@
 
-const APIKey = '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'
+const APIKey = process.env.API_KEY
 export default async function handler(request, response) {
     const APIBody = {
         "model": "text-davinci-003",
